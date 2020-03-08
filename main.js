@@ -53,12 +53,13 @@ next();
 
 //stop the timer to end the quiz 
 function endGame() {
-clearInterval(timer);
 
+clearInterval(timer);
+//this variable is working just to see how many questions answered.
 var quizContent = `
 <h2>Game over!</h2>
 <h3>You got a ` + score +  ` /100!</h3>
-<h3>Score is: ` + score / 20 +  ` questions correct!</h3>
+<h3> ` + score / 20 +  ` questions correct!</h3>
 <input type="text" id="name" placeholder="First name"> 
 <button onclick="setScore()">Set score!</button>`;
 
@@ -67,19 +68,20 @@ document.getElementById("quizBody").innerHTML = quizContent;
 
 //store the scores on local storage
 function setScore() {
-localStorage.setItem("highscore", score);
+localStorage.setItem("timeLeft", timeLeft);
 localStorage.setItem("highscoreName",  document.getElementById('name').value);
 
 getScore();
 }
 
-
+//**************** */ This is the out put of time to display.
 function getScore() {
 var quizContent = `
 <h2>` + localStorage.getItem("highscoreName") + `'s highscore is:</h2>
-<h1>` + localStorage.getItem("highscore") + `</h1><br> 
+<h1>` + localStorage.getItem("timeLeft") + `</h1><br> 
 
-<button onclick="clearScore()">Clear score!</button> <button onclick="resetGame()">Play Again!</button>`;
+<button onclick="clearScore()">Clear score!</button> 
+<button onclick="resetGame()">Play Again!</button>`;
 
 document.getElementById("quizBody").innerHTML = quizContent;
 }
@@ -125,6 +127,8 @@ next();
 
 //increases the score by 20points if the user chooses the correct answer
 function correct() {
+    
+//alert("correct");
 score += 20;
 next();
 }
@@ -141,10 +145,12 @@ if (currentQuestion > questions.length - 1) {
 var quizContent = "<h2>" + questions[currentQuestion].title + "</h2>"
 
 for (var buttonLoop = 0; buttonLoop < questions[currentQuestion].choices.length; buttonLoop++) {
+  
     var buttonCode = "<button onclick=\"[ANS]\">[CHOICE]</button>"; 
     buttonCode = buttonCode.replace("[CHOICE]", questions[currentQuestion].choices[buttonLoop]);
     if (questions[currentQuestion].choices[buttonLoop] == questions[currentQuestion].answer) {
         buttonCode = buttonCode.replace("[ANS]", "correct()");
+        
     } else {
         buttonCode = buttonCode.replace("[ANS]", "incorrect()");
     }

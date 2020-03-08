@@ -5,7 +5,7 @@
 The program is written in native HTML5, CSS and JavaScript. The JavaScript uses the DOM API to access or render elements to an HTML file.  The code is broken down into a series of functions that are initiated after a click event at the start of the program. There is one script: the main JavaScript file, contains a variable that stores five objects, each of which contain a question, multiple choice answer, and the valid answer. The main JavaScript file runs a series of functions to select and render questions and multiple choice questions to the DOM, allowing the user to click a button that corresponds with a multiple choice answer. When the correct answer is selected, a function compares the user location in an index to the string represented by the answer key in that object.
 
 ## Installation
-
+ <https://abdurezakmussa.github.io/quiz_game.github.io/>
 
 ## Refernces
 - w3schools.com
