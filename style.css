@@ -1,0 +1,61 @@
+/* Importing fonts from fonts.googleapis.com to get different fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+/* nav bar */
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+#nav {
+    display: block;
+    background-color:  #9ea09e;
+    display: inline-block;
+    width: 98vw;
+    border-radius: 5px;
+    margin: 6px;
+}
+
+/* main section */
+
+body {
+    font-family: 'Roboto Slab', arial;
+    background-color: #a1a1a1;
+}
+
+#quizBody {
+    text-align: center;
+    padding: 12vh;
+}
+
+h4 {
+    padding: 10px 8px 10px 8px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    border: none;
+    background-color: #ffd380;
+    color: black;
+    border-radius: 5px;
+    padding: 10px 16px 10px 16px;
+    font-size: 17px;
+    font-family: 'Roboto Slab', arial;
+    margin: 4px;
+}
+
+button:hover {
+    transition-duration: 0.4s;
+    background-color: #e69e1a;
+}
+
+#quiz {
+    text-align: center;
+}
